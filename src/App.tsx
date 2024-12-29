@@ -44,6 +44,7 @@ function App() {
   }, [setAuth]);
 
   return <>{auth.isAuthenticated ? <VaultScreen /> : <AuthScreen />}</>;
+  // return <AuthScreen />;
 }
 
 export default App;

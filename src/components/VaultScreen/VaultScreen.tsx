@@ -1,5 +1,11 @@
+import Navbar from "./Navbar";
+
 const VaultScreen = () => {
-  return <>VAULT</>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default VaultScreen;
