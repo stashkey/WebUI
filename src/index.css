@@ -1587,8 +1587,21 @@ html {
   display: flex;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
 .w-96 {
   width: 24rem;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .flex-1 {
@@ -1601,6 +1614,10 @@ html {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .content-center {

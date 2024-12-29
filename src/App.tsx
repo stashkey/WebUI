@@ -6,12 +6,17 @@ import { useAuth } from "./context/AuthContext";
 import axios from "axios";
 import config from "./config";
 import { useEffect } from "react";
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
   const { auth, setAuth } = useAuth();
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     const a = async () => {
+      const theme = localStorage.getItem("theme") || "black";
+      setTheme(theme);
+      document.documentElement.setAttribute("data-theme", theme);
       const BACKEND_URI = config.BACKEND_URI;
       const username = localStorage.getItem("username");
       await axios
