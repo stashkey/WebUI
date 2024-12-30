@@ -1,6 +1,6 @@
 import "./App.css";
 import AuthScreen from "./components/AuthScreen/AuthScreen";
-import { AuthProvider } from "./context/AuthContext";
+// import { AuthProvider } from "./context/AuthContext";
 import VaultScreen from "./components/VaultScreen/VaultScreen";
 import { useAuth } from "./context/AuthContext";
 import axios from "axios";
@@ -46,7 +46,7 @@ function App() {
         });
     };
     a();
-  }, [setAuth]);
+  }, [setTheme, setAuth]);
 
   return <>{auth.isAuthenticated ? <VaultScreen /> : <AuthScreen />}</>;
   // return <AuthScreen />;

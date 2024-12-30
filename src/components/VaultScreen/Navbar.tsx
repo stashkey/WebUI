@@ -3,6 +3,11 @@ import { useAuth } from "../../context/AuthContext";
 import { FaMoon, FaSignOutAlt, FaSun } from "react-icons/fa";
 import config from "../../config";
 import { useTheme } from "../../context/ThemeContext";
+import { IoMoon, IoSunny } from "react-icons/io5";
+
+/**
+ * Navbar which contains the logo, username, theme toggle and logout button, only visible when user is authenticated.
+ */
 
 const Navbar = () => {
   const { auth, setAuth } = useAuth();
@@ -38,11 +43,11 @@ const Navbar = () => {
           <button className="btn btn-outline mr-4" onClick={themeToggle}>
             {theme === "black" ? (
               <span className="">
-                <FaSun />
+                <IoMoon />
               </span>
             ) : (
               <span className="">
-                <FaMoon />
+                <IoSunny />
               </span>
             )}
           </button>

@@ -2,6 +2,9 @@ import { FaMoon, FaSignOutAlt, FaSun } from "react-icons/fa";
 import config from "../../config";
 import { useTheme } from "../../context/ThemeContext";
 
+/**
+ * Navbar which contains the logo, theme toggle, visible only on the Authentication Page.
+ */
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
 
@@ -22,11 +25,11 @@ const Navbar = () => {
           <button className="btn btn-outline mr-4" onClick={themeToggle}>
             {theme === "black" ? (
               <span className="">
-                <FaSun />
+                <FaMoon />
               </span>
             ) : (
               <span className="">
-                <FaMoon />
+                <FaSun />
               </span>
             )}
           </button>
