@@ -15,8 +15,8 @@ const EncryptBuffer = async (
     new Uint8Array(12),
   );
 
-  console.log("Inside EncryptBuffer", typeof data);
-  console.log("Inside EncryptBuffer", data instanceof ArrayBuffer);
+  // console.log("Inside EncryptBuffer", typeof data);
+  // console.log("Inside EncryptBuffer", data instanceof ArrayBuffer);
 
   const encryptedBuffer: ArrayBuffer = await window.crypto.subtle.encrypt(
     {
