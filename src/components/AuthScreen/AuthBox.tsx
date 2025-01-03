@@ -1,4 +1,4 @@
-import axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 import config from "../../config";
 import { MouseEventHandler, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
@@ -9,10 +9,10 @@ const AuthBox = () => {
   const [password, setPassword] = useState<string>("");
 
   const [isLogin, setIsLogin] = useState<boolean>(true);
+  const BACKEND_URI = config.BACKEND_URI;
 
   const handleLogin: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
-    const BACKEND_URI = config.BACKEND_URI;
 
     await axios
       .post(
