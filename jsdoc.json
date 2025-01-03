@@ -1,0 +1,20 @@
+
+{
+    "tags":{
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+    },
+  "source": {
+    "include": ["./src"],
+    "exclude": ["node_modules"],
+    "includePattern": ".(jsx|js|ts|tsx)$"
+  },
+  "opts": {
+    "destination": "./docs",
+    "template": "node_modules/jsdoc-template"
+  },
+  "plugins": [
+    "node_modules/jsdoc/plugins/markdown"
+  ],
+  "sourceType": "module"
+}

@@ -7,31 +7,12 @@ import axios from "axios";
 import config from "./config";
 import { useEffect } from "react";
 import { useTheme } from "./context/ThemeContext";
-import DeriveKey from "./utils/DeriveKey";
-import EncryptBuffer from "./utils/EncryptBuffer";
-import { MdDeck } from "react-icons/md";
-import DecryptBuffer from "./utils/DecryptBuffer";
+// import DeriveKey from "./utils/DeriveKey";
+// import EncryptBuffer from "./utils/EncryptBuffer";
+// import { MdDeck } from "react-icons/md";
+// import DecryptBuffer from "./utils/DecryptBuffer";
 
 function App() {
-  useEffect(() => {
-    const a = async () => {
-      const buffer = new ArrayBuffer(10);
-      const view = new Uint8Array(buffer);
-      crypto.getRandomValues(view);
-
-      console.log("Buffer", view);
-
-      const key = await DeriveKey("password123", "salt123", 10);
-
-      const { encryptedBuffer, iv } = await EncryptBuffer(buffer, key);
-      console.log("Encrypted", encryptedBuffer, iv);
-
-      const decrypted = await DecryptBuffer(encryptedBuffer, iv, key);
-      console.log("Decrypted", new Uint8Array(decrypted));
-    };
-    a();
-  }, []);
-
   const { auth, setAuth } = useAuth();
   const { setTheme } = useTheme();
 
@@ -59,8 +40,7 @@ function App() {
           });
         })
         .catch((err) => {
-          // console.error(err);
-          console.log("ERROR FETCHING REFRESH TOKEN");
+          console.error(err);
           setAuth({
             username: null,
             token: null,
